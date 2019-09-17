@@ -1,19 +1,16 @@
-import React, { Component, MouseEvent } from 'react'
+import React, { MouseEvent } from "react";
 
+type Props = {
+  onClick: Function;
+};
 
-const Button: React.FC = ({ children }) => {
-	const handleClick = (event: MouseEvent) => {
-    
+const Button: React.FC<Props> = ({ children, onClick }) => {
+  const handleClick = (event: MouseEvent) => {
     event.preventDefault();
-    
-    alert(event.currentTarget.tagName); // alerts BUTTON
-	}
+    onClick();
+  };
 
-    return ( 
-    	<button onClick={handleClick}>
-	    	{children}
-	    </button>
-	);
-}
+  return <button onClick={handleClick}>{children}</button>;
+};
 
-export default Button
+export default Button;
