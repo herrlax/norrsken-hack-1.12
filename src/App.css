@@ -1,5 +1,24 @@
+@import url(//fonts.googleapis.com/css?family=Raleway);
+
+body {
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Raleway", "Work Sans", Verdana;
+}
+
 .App {
   text-align: center;
+}
+
+.Background {
+  background-image: linear-gradient(
+    -180deg,
+    rgba(63, 40, 165, 0.9) 0%,
+    rgba(97, 119, 244, 0.75) 100%
+  );
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
 }
 
 .App-logo {
