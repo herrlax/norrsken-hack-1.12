@@ -1,13 +1,17 @@
 import React from "react";
-import { Product } from '../../utils';
 
 type Props = {
-	name: string;
-	expiration: number;
-}
+  name: string;
+  expiration: number;
+  onClick(): void;
+};
 
-const ProductItem = ({ name, expiration }: Props) => {
-	return <li>{name}, {expiration}</li>;
+const ProductItem = ({ name, expiration, onClick }: Props) => {
+  return (
+    <li onClick={onClick}>
+      {name}, {expiration}
+    </li>
+  );
 };
 
 export default ProductItem;

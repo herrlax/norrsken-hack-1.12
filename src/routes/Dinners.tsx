@@ -15,8 +15,6 @@ const Dinners = () => {
     getSuggestions();
   }, [getSuggestions]);
 
-  console.log(suggestions, loading);
-
   return (
     <div>
       <h2>Dinners page</h2>
