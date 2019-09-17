@@ -12,6 +12,8 @@ const ProviderWrapper = styled.div`
   margin: 1rem;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
   display: flex;
+  background: white;
+  border-radius: 4px;
 `;
 const ProviderStatus = styled.div`
   justify-self: flex-end;
@@ -29,6 +31,7 @@ const ProviderLogoWrapper = styled.div`
 `;
 
 const Connected = styled.div`
+  color: #1b1b1b;
   font-size: 12px;
   font-weight: bold;
   text-align: right;
