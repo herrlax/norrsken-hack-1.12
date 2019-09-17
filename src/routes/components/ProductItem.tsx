@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
   name: string;
@@ -8,9 +8,9 @@ type Props = {
 
 const ProductItem = ({ name, expiration, onClick }: Props) => {
   return (
-    <li onClick={onClick} className="list-item">
+    <div onClick={onClick} className='List-item'>
       {name}, {expiration}
-    </li>
+    </div>
   );
 };
 

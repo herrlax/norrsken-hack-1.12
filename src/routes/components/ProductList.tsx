@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import ProductItem from "./ProductItem";
-import { Product } from "../../utils";
-import ProductDialog from "./ProductDialog";
+import React, { useState } from 'react';
+import ProductItem from './ProductItem';
+import { Product } from '../../utils';
+import ProductDialog from './ProductDialog';
 
 type Props = {
   products: Product[];
@@ -23,23 +23,22 @@ const ProductList = ({ products }: Props) => {
   }
 
   return (
-    <>
-      <ul>
-        {products.map(d => (
-          <ProductItem
-            name={d.name}
-            expiration={d.expiration}
-            key={d.id}
-            onClick={() => showProductInfo(d)}
-          />
-        ))}
-      </ul>
+    <div style={{ flex: 'auto' }}>
+      <h2>Your Ingredients</h2>
+      {products.map(d => (
+        <ProductItem
+          name={d.name}
+          expiration={d.expiration}
+          key={d.id}
+          onClick={() => showProductInfo(d)}
+        />
+      ))}
       <ProductDialog
         isOpen={dialogIsOpen}
         hideDialog={() => setDialogIsOpen(false)}
         product={product}
       />
-    </>
+    </div>
   );
 };
 

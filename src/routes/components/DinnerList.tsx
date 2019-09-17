@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Dinner } from "../../utils";
-import DinnerItem from "./DinnerItem";
-import RecipeDialog from "./RecipeDialog";
+import React, { useState } from 'react';
+import { Dinner } from '../../utils';
+import DinnerItem from './DinnerItem';
+import RecipeDialog from './RecipeDialog';
 
 type Props = {
   dinners: Dinner[];
@@ -9,7 +9,7 @@ type Props = {
 
 const dinnerListStyle = {
   padding: 0,
-  width: "500px"
+  width: '500px'
 };
 
 const DinnerList = ({ dinners }: Props) => {
@@ -24,9 +24,10 @@ const DinnerList = ({ dinners }: Props) => {
   if (dinners.length < 1) {
     return <h3>No dinners found :(</h3>;
   }
- 
+
   return (
-    <>
+    <div>
+      <h2>Recommended Recipes</h2>
       <ul style={dinnerListStyle}>
         {dinners.map(d => (
           <DinnerItem name={d.name} key={d.id} onClick={() => showRecipe(d)} />
@@ -37,7 +38,7 @@ const DinnerList = ({ dinners }: Props) => {
         hideDialog={() => setDialogIsOpen(false)}
         dinner={dinner}
       />
-    </>
+    </div>
   );
 };
 
