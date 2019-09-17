@@ -8,7 +8,7 @@ type Props = {
 
 const ProductItem = ({ name, expiration, onClick }: Props) => {
   return (
-    <li onClick={onClick}>
+    <li onClick={onClick} className="list-item">
       {name}, {expiration}
     </li>
   );
