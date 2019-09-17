@@ -1,6 +1,16 @@
-import React from 'react';
-const Button: React.FC = ({ children, ...otherProps }) => {
-  return <button {...otherProps}>{children}</button>;
+import React, { MouseEvent } from 'react';
+
+type Props = {
+  onClick: Function;
+};
+
+const Button: React.FC<Props> = ({ children, onClick }) => {
+  const handleClick = (event: MouseEvent) => {
+    event.preventDefault();
+    onClick();
+  };
+
+  return <button onClick={handleClick}>{children}</button>;
 };
 
 export default Button;
