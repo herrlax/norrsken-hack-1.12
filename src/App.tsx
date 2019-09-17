@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Landing from "./routes/Landing";
+import Enter from "./routes/Enter";
 import Dinners from "./routes/Dinners";
 import { DataContextProvider } from "./context/DataContext";
 
@@ -13,8 +14,9 @@ const App: React.FC = () => {
       <DataContextProvider>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={Enter} />
             <Route exact path="/dinners" component={Dinners} />
+            <Route exact path="/integrations" component={Landing} />
             <Route exact path="/*" component={NotFound} />
           </Switch>
         </div>

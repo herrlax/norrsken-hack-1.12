@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import DinnerList from './components/DinnerList';
-import AddButton from './components/AddButton';
-import ProductList from './components/ProductList';
-import AddItemsDialog from './components/AddItemsDialog';
-import useSuggestions from '../hooks/useSuggestions';
-import { useIngredients } from '../hooks/useIngredients';
+import React, { useEffect, useState } from "react";
+import DinnerList from "./components/DinnerList";
+import AddButton from "./components/AddButton";
+import ProductList from "./components/ProductList";
+import AddItemsDialog from "./components/AddItemsDialog";
+import useSuggestions from "../hooks/useSuggestions";
+import { useIngredients } from "../hooks/useIngredients";
 
 const Dinners = () => {
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
@@ -17,8 +17,8 @@ const Dinners = () => {
   return (
     <div>
       <h2>Your Expyro 🐉</h2>
-      <DinnerList dinners={mockedDinners} />
-      <ProductList products={mockedProducts} />
+      <DinnerList dinners={[]} />
+      <ProductList products={[]} />
       <AddItemsDialog
         isOpen={isAddDialogOpen}
         hideDialog={() => setIsAddDialogOpen(false)}
