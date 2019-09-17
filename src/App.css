@@ -6,6 +6,42 @@ body {
   font-family: "Raleway", "Work Sans", Verdana;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+a:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.List-item {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.List-item:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.List-item:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .App {
   text-align: center;
 }
