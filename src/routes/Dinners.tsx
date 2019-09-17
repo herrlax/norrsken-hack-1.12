@@ -5,6 +5,7 @@ import ProductList from "./components/ProductList";
 import AddItemsDialog from "./components/AddItemsDialog";
 import useSuggestions from "../hooks/useSuggestions";
 import { useIngredients } from "../hooks/useIngredients";
+import { mockedDinners } from "../utils";
 
 const Dinners = () => {
   const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
@@ -17,8 +18,8 @@ const Dinners = () => {
   return (
     <div>
       <h2>Your Expyro 🐉</h2>
-      <div style={{ display: "flex" }}>
-        <DinnerList dinners={suggestions} />
+      <div style={{ display: "flex", padding: "20px" }}>
+        <DinnerList dinners={mockedDinners} />
         <ProductList products={ingredients} />
       </div>
       <AddItemsDialog

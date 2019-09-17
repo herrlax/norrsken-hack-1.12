@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Dinner } from '../../utils';
-import DinnerItem from './DinnerItem';
-import RecipeDialog from './RecipeDialog';
+import React, { useState } from "react";
+import { Dinner } from "../../utils";
+import DinnerItem from "./DinnerItem";
+import RecipeDialog from "./RecipeDialog";
 
 type Props = {
   dinners: Dinner[];
@@ -9,7 +9,11 @@ type Props = {
 
 const dinnerListStyle = {
   padding: 0,
-  width: '500px'
+  width: "500px"
+};
+
+const Wrap = {
+  padding: "20px"
 };
 
 const DinnerList = ({ dinners }: Props) => {
@@ -26,7 +30,7 @@ const DinnerList = ({ dinners }: Props) => {
   }
 
   return (
-    <div>
+    <div style={Wrap}>
       <h2>Recommended Recipes</h2>
       <ul style={dinnerListStyle}>
         {dinners.map(d => (
