@@ -10,7 +10,7 @@ function useSuggestions() {
     async function getSuggestionsFromApi() {
       setLoading(true);
       try {
-        const response = await fetch(`${API_URL}/getDinners`).then(res =>
+        const response = await fetch(`${API_URL}/recipes`).then(res =>
           res.json()
         );
         setSuggestions(response);

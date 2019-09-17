@@ -1,36 +1,51 @@
-import React, { createContext, useMemo, useState, useEffect } from 'react';
+import React, {
+  createContext,
+  useMemo,
+  useState,
+  useEffect,
+  useCallback
+} from 'react';
 import { Product } from '../utils';
 
 interface DataContextInterface {
   ingredients: Product[];
+  addIngredient: (ingredient: Product) => void;
 }
 
 export const DataContext = createContext<DataContextInterface>({
-  ingredients: []
+  ingredients: [],
+  addIngredient: (ingredient: Product) => {}
 });
 
-export const API_URL = 'http://mockdataforappandstuff.com';
+export const API_URL = 'https://unsolved2019.herokuapp.com';
 
 export const DataContextProvider: React.FC = ({ children }) => {
-  const [ingredients /*, setIngredients*/] = useState<Product[]>([]);
+  const [ingredients, setIngredients] = useState<Product[]>([]);
 
   useEffect(() => {
     async function fetchIngredients() {
-      return; // TODO ACTUAL API
-      /*const response = await fetch(`${API_URL}/getIngredients`).then(res =>
+      const response = await fetch(`${API_URL}/products`).then(res =>
         res.json()
       );
 
-      setIngredients(response);*/
+      setIngredients(response);
     }
     fetchIngredients();
   }, []);
 
+  const addIngredient = useCallback(
+    (ingredient: Product) => {
+      setIngredients([...ingredients, ingredient]);
+    },
+    [ingredients]
+  );
+
   const value = useMemo(
     () => ({
-      ingredients
+      ingredients,
+      addIngredient
     }),
-    [ingredients]
+    [ingredients, addIngredient]
   );
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
