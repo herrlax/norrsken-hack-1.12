@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
 import { API_URL } from '../context/DataContext';
+import { Dinner } from '../utils';
 
-export function useSuggestion() {
+function useSuggestions() {
   const [loading, setLoading] = useState(false);
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<Dinner[]>([]);
 
   const getSuggestions = useCallback(() => {
     async function getSuggestionsFromApi() {
@@ -24,3 +25,4 @@ export function useSuggestion() {
 
   return { suggestions, getSuggestions, loading };
 }
+export default useSuggestions;

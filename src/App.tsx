@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Landing from './routes/Landing';
+import Dinners from './routes/Dinners';
+import { DataContextProvider } from './context/DataContext';
+
+const NotFound = () => <h2>Not found</h2>;
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataContextProvider>
+      <div className='App'>
+        <Switch>
+          <Route exact path='/' component={Landing} />
+          <Route exact path='/dinners' component={Dinners} />
+          <Route exact path='/*' component={NotFound} />
+        </Switch>
+      </div>
+    </DataContextProvider>
   );
-}
+};
 
 export default App;

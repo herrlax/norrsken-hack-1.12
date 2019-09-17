@@ -1,8 +1,8 @@
 import React, { createContext, useMemo, useState, useEffect } from 'react';
-import { Ingredient } from '../types';
+import { Product } from '../utils';
 
 interface DataContextInterface {
-  ingredients: Ingredient[];
+  ingredients: Product[];
 }
 
 export const DataContext = createContext<DataContextInterface>({
@@ -12,7 +12,7 @@ export const DataContext = createContext<DataContextInterface>({
 export const API_URL = 'http://mockdataforappandstuff.com';
 
 export const DataContextProvider: React.FC = ({ children }) => {
-  const [ingredients /*, setIngredients*/] = useState<Ingredient[]>([]);
+  const [ingredients /*, setIngredients*/] = useState<Product[]>([]);
 
   useEffect(() => {
     async function fetchIngredients() {
