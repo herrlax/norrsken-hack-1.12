@@ -12,6 +12,14 @@ const dinnerListStyle = {
   listStyleType: "none"
 };
 
+const dinnerListHeader = {
+	paddingBottom: 5,
+};
+
+const dinnerListContent = {
+	
+};
+
 const productListHeader = {
 	padding: 0,
 	width: "500px"
@@ -22,11 +30,13 @@ const ProductList = ({ products }: Props) => {
   return (
   	<>
     <ul style={dinnerListStyle}>
-      <h3>Ingredients Purchased:</h3>
-      {products.map(d => (
-        <ProductItem name={d.name} expiration={d.expiration} key={d.id} />
-      ))}
-    </ul>
+      <h3 style={dinnerListHeader}>Ingredients Purchased:</h3>
+      	<div style={dinnerListContent}>
+	      {products.map(d => (
+	        <ProductItem name={d.name} expiration={d.expiration} key={d.id} />
+	      ))}
+		</div>
+	</ul>
     </>
   );
 };
