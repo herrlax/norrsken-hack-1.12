@@ -9,6 +9,7 @@ export type Dinner = {
   id: string;
   name: string;
   ingredients: Product[];
+  description?: string;
 };
 
 export type Provider = {
@@ -42,10 +43,24 @@ export const mockedDinners = [
   {
     id: "test-dinner-1",
     name: "Pancake",
-    ingredients: [flour, milk, egg, egg]
+    ingredients: [flour, milk, egg, egg],
+    description:
+      "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique 2. nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. 3. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, 4. 500°C (!) at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu."
   },
-  { id: "test-dinner-2", name: "Omelette", ingredients: [egg, egg, egg, egg] },
-  { id: "test-dinner-3", name: "Milk soup", ingredients: [milk, milk, milk] }
+  {
+    id: "test-dinner-2",
+    name: "Omelette",
+    ingredients: [egg, egg, egg, egg],
+    description:
+      "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique 2. nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. 3. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, 4. 500°C (!) at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu."
+  },
+  {
+    id: "test-dinner-3",
+    name: "Milk soup",
+    ingredients: [milk, milk, milk],
+    description:
+      "1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut aliquet tristique 2. nisl vitae volutpat. Nulla aliquet porttitor venenatis. Donec a dui et dui fringilla consectetur id nec massa. 3. Aliquam erat volutpat. Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet sodales felis. Duis nunc eros, 4. 500°C (!) at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula eu."
+  }
 ];
 
 export const mockedProducts = [egg, milk, flour];

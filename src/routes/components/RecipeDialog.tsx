@@ -20,7 +20,22 @@ const ingredientStyle = {
 };
 
 const listStyles = {
+  marginTop: "5px",
   padding: 0
+};
+
+const stepsStyle = {
+  marginTop: "5px",
+  padding: "20px"
+};
+
+const printStyle = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "black",
+  width: "150px",
+  marginBottom: "20px"
 };
 
 const contentStyles = {
@@ -44,6 +59,7 @@ const RecipeDialog = ({ isOpen, hideDialog, dinner }: Props) => {
     >
       <div style={contentStyles}>
         <DialogTitle id="simple-dialog-title">{dinner.name}</DialogTitle>
+        <b>Ingredients</b>
         <ul style={listStyles}>
           {dinner.ingredients.map(i => (
             <li key={i.id} style={ingredientStyle}>
@@ -51,6 +67,18 @@ const RecipeDialog = ({ isOpen, hideDialog, dinner }: Props) => {
             </li>
           ))}
         </ul>
+        {dinner.description && (
+          <div style={stepsStyle}>
+            <b>Instructions</b>
+            <p>{dinner.description}</p>
+          </div>
+        )}
+        <a href="#print" style={printStyle}>
+          ️ 🖨️ Print recipe
+        </a>
+        <a href="#print" style={printStyle}>
+          Mark as cooked
+        </a>
       </div>
       <Button onClick={hideDialog}>Close</Button>
     </Dialog>

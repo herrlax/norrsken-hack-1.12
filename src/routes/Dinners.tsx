@@ -16,10 +16,9 @@ const Dinners = () => {
   }, [getSuggestions]);
   return (
     <div>
-      <h2>Dinners page</h2>
-      <DinnerList dinners={suggestions} />
-      <ProductList products={ingredients} />
-
+      <h2>Your Expyro 🐉</h2>
+      <DinnerList dinners={mockedDinners} />
+      <ProductList products={mockedProducts} />
       <AddItemsDialog
         isOpen={isAddDialogOpen}
         hideDialog={() => setIsAddDialogOpen(false)}
