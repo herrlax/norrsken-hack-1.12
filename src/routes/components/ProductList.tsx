@@ -6,14 +6,28 @@ type Props = {
   products: Product[];
 };
 
+const dinnerListStyle = {
+  padding: 0,
+  width: "500px",
+  listStyleType: "none"
+};
+
+const productListHeader = {
+	padding: 0,
+	width: "500px"
+};
+
 const ProductList = ({ products }: Props) => {
  
   return (
-    <ul>
+  	<>
+    <ul style={dinnerListStyle}>
+      <h3>Ingredients Purchased:</h3>
       {products.map(d => (
         <ProductItem name={d.name} expiration={d.expiration} key={d.id} />
       ))}
     </ul>
+    </>
   );
 };
 

@@ -4,6 +4,10 @@ import ProductList from "./components/ProductList";
 import { mockedDinners, mockedProducts } from "../utils";
 import useSuggestions from "../hooks/useSuggestions";
 
+const content = {
+  display: 'flex'
+}
+
 const Dinners = () => {
   const { loading, getSuggestions, suggestions } = useSuggestions();
 
@@ -16,8 +20,10 @@ const Dinners = () => {
   return (
     <div>
       <h2>Dinners page</h2>
-      <DinnerList dinners={mockedDinners} />
-      <ProductList products={mockedProducts} />
+        <div style={content}>
+          <DinnerList dinners={mockedDinners} />
+          <ProductList products={mockedProducts} />
+        </div>
     </div>
   );
 };
