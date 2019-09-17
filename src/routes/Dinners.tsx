@@ -1,20 +1,26 @@
-import React, { useEffect } from "react";
-import DinnerList from "./components/DinnerList";
-import { mockedDinners } from "../utils";
-import useSuggestions from "../hooks/useSuggestions";
+import React, { useEffect, useState } from 'react';
+import DinnerList from './components/DinnerList';
+import AddButton from './components/AddButton';
+import AddItemsDialog from './components/AddItemsDialog';
+import useSuggestions from '../hooks/useSuggestions';
 
 const Dinners = () => {
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false);
   const { loading, getSuggestions, suggestions } = useSuggestions();
 
   useEffect(() => {
     getSuggestions();
   }, [getSuggestions]);
-
-  console.log(suggestions, loading);
   return (
     <div>
       <h2>Dinners page</h2>
-      <DinnerList dinners={mockedDinners} />
+      <DinnerList dinners={suggestions} />
+
+      <AddItemsDialog
+        isOpen={isAddDialogOpen}
+        hideDialog={() => setIsAddDialogOpen(false)}
+      />
+      <AddButton onClick={() => setIsAddDialogOpen(true)} />
     </div>
   );
 };
