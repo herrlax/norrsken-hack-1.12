@@ -33,3 +33,7 @@ export const mockedDinners = [
   { id: 'test-dinner-2', name: 'Omelette', ingredients: [egg, egg, egg, egg] },
   { id: 'test-dinner-3', name: 'Milk soup', ingredients: [milk, milk, milk] }
 ];
+
+export const mockedProducts = [
+  egg, milk, flour
+];
