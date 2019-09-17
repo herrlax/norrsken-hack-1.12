@@ -5,6 +5,7 @@ import ProductList from './components/ProductList';
 import AddItemsDialog from './components/AddItemsDialog';
 import useSuggestions from '../hooks/useSuggestions';
 import { useIngredients } from '../hooks/useIngredients';
+import { mockedDinners, mockedProducts } from '../utils';
 
 const content = {
   display: 'flex'
@@ -21,13 +22,15 @@ const Dinners = () => {
   return (
     <div>
       <h2>Your Expyro 🐉</h2>
-      <DinnerList dinners={mockedDinners} />
-      <ProductList products={mockedProducts} />
-      <AddItemsDialog
+        <div style={content}>
+          <DinnerList dinners={mockedDinners} />
+          <ProductList products={mockedProducts} />
+          <AddItemsDialog
         isOpen={isAddDialogOpen}
         hideDialog={() => setIsAddDialogOpen(false)}
       />
       <AddButton onClick={() => setIsAddDialogOpen(true)} />
+      </div>
     </div>
   );
 };

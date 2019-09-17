@@ -28,9 +28,10 @@ const DinnerList = ({ dinners }: Props) => {
   return (
     <>
       <ul style={dinnerListStyle}>
-        {dinners.map(d => (
-          <DinnerItem name={d.name} key={d.id} onClick={() => showRecipe(d)} />
-        ))}
+        <h3>Recommended Receipes:</h3>
+          {dinners.map(d => (
+            <DinnerItem name={d.name} key={d.id} onClick={() => showRecipe(d)} />
+          ))}
       </ul>
       <RecipeDialog
         isOpen={dialogIsOpen}

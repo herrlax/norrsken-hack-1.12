@@ -10,16 +10,7 @@ type Props = {
 const dinnerListStyle = {
   padding: 0,
   width: "500px",
-  listStyleType: "none"
-};
-
-const dinnerListHeader = {
-	paddingBottom: 5,
-};
-
-const productListHeader = {
-	padding: 0,
-	width: "500px"
+  listStyleType: "none",
 };
 
 const ProductList = ({ products }: Props) => {
