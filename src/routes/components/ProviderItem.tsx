@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Provider } from '../../utils';
-import Button from './Button';
-import Loader from './Loader';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Provider } from "../../utils";
+import Loader from "./Loader";
+import { Button } from "@material-ui/core";
 interface ProviderItemProps {
   provider: Provider;
 }
@@ -14,6 +14,11 @@ const ProviderWrapper = styled.div`
   display: flex;
   background: white;
   border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+  }
 `;
 const ProviderStatus = styled.div`
   justify-self: flex-end;
@@ -42,14 +47,17 @@ const ConntectedSubtitle = styled.div`
 
 const ConnectedUser = ({
   connected,
-  onClick
+  onClick,
+  id
 }: {
   onClick: any;
   connected: boolean;
+  id: string;
 }) => {
   return !connected ? (
-    // @ts-ignore
-    <Button onClick={onClick}>Connect</Button>
+    <Button onClick={onClick} id={id}>
+      Connect
+    </Button>
   ) : (
     <Connected>
       <ConntectedSubtitle>Connected with:</ConntectedSubtitle>
@@ -59,10 +67,18 @@ const ConnectedUser = ({
 };
 
 const ProviderItem: React.FC<ProviderItemProps> = ({ provider }) => {
+  const clickButton = () => {
+    const btn = document.getElementById(provider.id);
+
+    if (btn) {
+      btn.click();
+    }
+  };
+
   const [fakeLoading, setFakeLoading] = useState(false);
   const [connected, setConnected] = useState(false);
   return (
-    <ProviderWrapper>
+    <ProviderWrapper onClick={clickButton}>
       <ProviderLogoWrapper>
         <ProviderLogo src={provider.logo} />
       </ProviderLogoWrapper>
@@ -77,6 +93,7 @@ const ProviderItem: React.FC<ProviderItemProps> = ({ provider }) => {
                 setFakeLoading(false);
               }, 2000);
             }}
+            id={provider.id}
             connected={connected}
           />
         )}
