@@ -24,7 +24,7 @@ const DinnerList = ({ dinners }: Props) => {
   if (dinners.length < 1) {
     return <h3>No dinners found :(</h3>;
   }
-
+ 
   return (
     <>
       <ul style={dinnerListStyle}>
