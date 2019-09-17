@@ -1,9 +1,8 @@
 import React from "react";
-import { Product } from "../../utils";
 
 type Props = {
   name: string;
-  ingredients: Product[];
+  onClick(): void;
 };
 
 const itemsStyles = {
@@ -17,8 +16,12 @@ const itemsStyles = {
   borderRadius: "3px"
 };
 
-const DinnerItem = ({ name, ingredients }: Props) => {
-  return <li style={itemsStyles}>{name}</li>;
+const DinnerItem = ({ name, onClick }: Props) => {
+  return (
+    <li style={itemsStyles} onClick={onClick}>
+      {name}
+    </li>
+  );
 };
 
 export default DinnerItem;

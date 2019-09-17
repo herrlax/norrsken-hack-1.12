@@ -9,15 +9,17 @@ const NotFound = () => <h2>Not found</h2>;
 
 const App: React.FC = () => {
   return (
-    <DataContextProvider>
-      <div className="App AppBg">
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/dinners" component={Dinners} />
-          <Route exact path="/*" component={NotFound} />
-        </Switch>
-      </div>
-    </DataContextProvider>
+    <div className="Background">
+      <DataContextProvider>
+        <div className="App">
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/dinners" component={Dinners} />
+            <Route exact path="/*" component={NotFound} />
+          </Switch>
+        </div>
+      </DataContextProvider>
+    </div>
   );
 };
 
