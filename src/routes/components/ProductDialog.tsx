@@ -11,7 +11,7 @@ type Props = {
 };
 
 const infoStyle = {
-  padding: "20px"
+  marginBottom: "20px"
 };
 
 const contentStyles = {
@@ -19,6 +19,15 @@ const contentStyles = {
   alignItems: "center",
   justifyContent: "center",
   width: "500px",
+  flexDirection: "column" as "column"
+};
+
+const infoWrapStyle = {
+  paddingLeft: "20px",
+  paddingRight: "20px",
+  display: "flex",
+  alignItems: "start",
+  justifyContent: "center",
   flexDirection: "column" as "column"
 };
 
@@ -35,8 +44,12 @@ const ProductDialog = ({ isOpen, hideDialog, product }: Props) => {
     >
       <div style={contentStyles}>
         <DialogTitle id="simple-dialog-title">{product.name}</DialogTitle>
-        <div style={infoStyle}>{product.info}</div>
-        <div style={infoStyle}>Your {product.name} expires tomorrow</div>
+        <div style={infoWrapStyle}>
+          <b>General info</b>
+          <div style={infoStyle}>{product.info}</div>
+          <b>Expire date</b>
+          <div style={infoStyle}>Your {product.name} expires tomorrow</div>
+        </div>
       </div>
       <Button onClick={hideDialog}>Close</Button>
     </Dialog>
