@@ -17,8 +17,10 @@ const Dinners = () => {
   return (
     <div>
       <h2>Your Expyro 🐉</h2>
-      <DinnerList dinners={[]} />
-      <ProductList products={[]} />
+      <div style={{ display: "flex" }}>
+        <DinnerList dinners={suggestions} />
+        <ProductList products={ingredients} />
+      </div>
       <AddItemsDialog
         isOpen={isAddDialogOpen}
         hideDialog={() => setIsAddDialogOpen(false)}
