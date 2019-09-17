@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import DinnerList from './components/DinnerList';
+import ProductList from './components/ProductList';
 import { mockedDinners } from '../utils';
 import useSuggestions from '../hooks/useSuggestions';
+
 const Dinners = () => {
   const { loading, getSuggestions, suggestions } = useSuggestions();
 
@@ -10,6 +12,7 @@ const Dinners = () => {
   }, [getSuggestions]);
 
   console.log(suggestions, loading);
+  
   return (
     <div>
       <h2>Dinners page</h2>
