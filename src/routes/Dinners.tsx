@@ -13,7 +13,7 @@ const Dinners = () => {
 
   return (
     <div>
-      <h2>Dinners page</h2>
+      <h2>Your Expyro 🐉</h2>
       <DinnerList dinners={mockedDinners} />
       <ProductList products={mockedProducts} />
     </div>
